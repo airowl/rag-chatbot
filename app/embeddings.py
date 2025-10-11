@@ -19,7 +19,7 @@ def create_vector_store(pdf_path: str):
     return vectordb
 
 def load_vector_store():
-
+    #  load DB
     embeddings = OllamaEmbeddings(model="mistral-7b-instruct")
     vectordb = Chroma(persist_directory=CHROMA_PATH, embedding_function=embeddings)
     return vectordb
