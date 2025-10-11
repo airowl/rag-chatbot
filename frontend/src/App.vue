@@ -28,7 +28,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import api from './api'
+import api from './api.ts'
 
 const selectedFile = ref(null)
 const loading = ref(false)

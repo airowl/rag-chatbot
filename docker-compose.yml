@@ -4,9 +4,13 @@ services:
     build: .
     ports:
       - "8000:8000"
+    environment:
+      - OLLAMA_HOST=host.docker.internal:11434  # Collegamento all'host
     volumes:
       - ./data:/app/data
       - ./chroma:/app/chroma
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
   frontend:
     build:
