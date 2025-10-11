@@ -5,7 +5,7 @@ from app.rag_pipeline import build_rag_pipeline
 
 app = FastAPI()
 
-@app.post("/upload/")
+@app.post("/upload")
 async def upload_pdf(file: UploadFile):
     path = f"data/docs/{file.filename}"
     
@@ -14,7 +14,7 @@ async def upload_pdf(file: UploadFile):
     create_vector_store(path)
     return {"message": f"File {file.filename} uploaded and processed."}
 
-@app.get("/ask/")
+@app.get("/ask")
 async def ask(query: str):
     qa = build_rag_pipeline()
     response = qa.run(query)
