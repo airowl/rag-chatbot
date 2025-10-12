@@ -4,6 +4,6 @@ fastapi>=0.104.0
 uvicorn>=0.24.0
 python-multipart>=0.0.6
 pypdf>=3.11.0
-chromadb
+chromadb==0.4.13
 langchain-ollama
 langchain-chroma

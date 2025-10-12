@@ -14,7 +14,7 @@ def create_vector_store(pdf_path: str):
     embeddings = OllamaEmbeddings(model="mistral")
 
     # create database vector store
-    vectordb = Chroma(collection_name=docs[0].metadata["source"], embedding_function=embeddings, persist_directory=CHROMA_PATH)
+    vectordb = Chroma.from_documents(docs, embeddings, persist_directory=CHROMA_PATH)
     return vectordb
 
 def load_vector_store():
